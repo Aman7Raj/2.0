@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Partner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input, .form-container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #04ff00c8;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #21b300b2;
+        }
+        .form-container .captcha-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Become a Partner</h2>
+        <form id="demoForm">
+            <input type="text" id="name" name="name" placeholder="Name *" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone number *" required>
+            <input type="email" id="email" name="email" placeholder="Email ID *" required>
+            <input type="text" id="companyName" name="companyName" placeholder="Company Name">
+            <input type="url" id="companyWebsite" name="companyWebsite" placeholder="Company Website">
+            <textarea id="message" name="message" placeholder="Write a message or query"></textarea>
+           
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById('demoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+</body>
+</html>

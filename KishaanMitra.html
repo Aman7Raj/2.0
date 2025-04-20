@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisaan Mitra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f3;
+           
+        }
+
+        /* General Styles */
+        :root {
+            --primary-green: #388e3c;
+            --secondary-green: #66bb6a;
+            --light-green: #a5d6a7;
+            --dark-green: #0c160d;
+            --footer-bg: #2b2b2b;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(58, 229, 58, 0.973);
+            color: white;
+            padding: 1rem;
+            position:relative;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+            
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(250, 243, 243);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(red);
+        }
+
+        .demo-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: left;
+            padding: 2rem;
+            background-image: url(farm1.jpg);
+            background-size: cover; /* Ensure the image covers the entire viewport */
+    background-position: center; /* Center the image */
+    height: 50vh; /* Full height of the viewport */
+    filter: opacity(0.9);
+            background-size: cover;
+            background-position: center;
+            color: rgb(255, 254, 254);
+        }
+
+        .cta-buttons button {
+            margin: 1rem;
+            
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background: var(--primary-green);
+            color: white;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-buttons button:hover {
+            transform: scale(1.1);
+            background: var(--secondary-green);
+        }
+
+        /* Krishify Agri Ecosystem Section */
+        .container {
+            text-align: center;
+            padding: 50px;
+            color: #26701f;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hex {
+            width: 150px;
+            height: 130px;
+            background-color: #ccfdc8;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(112, 231, 132, 0.1);
+        }
+
+        .hex-content {
+            font-size: 18px;
+            font-weight: bold;
+            color:rgb(48, 95, 26);
+        }
+
+        .hex-content span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            background-image: url('tract2.jpg');
+            background-size: cover; /* Ensure the image covers the entire viewport */
+    background-position: center; /* Center the image */
+    height: 80vh; /* Full height of the viewport */
+    filter: opacity(0.7);
+    background-color: rgb(248, 244, 244); /* Black overlay with 50% opacity */
+    z-index: -1; /* Place overlay behind content */
+            
+           
+            
+        }
+
+        .service {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .service h2 {
+            color:  #26701f;
+        }
+
+        .service p {
+            color: #359b2c;
+            font-weight: 600;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: rgb(241, 244, 239);
+            text-decoration: none;
+        }
+
+        
+
+        .social-icons a {
+            margin: 0 0.5rem;
+            color: rgb(232, 232, 232);
+            text-decoration: none;
+            
+        }
+
+        .social-icons  :hover{
+            transform: scale(1.1);
+            color:  var(--secondary-green);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: #e8f5e9;
+            }
+            50% {
+                background: #c8e6c9;
+            }
+            100% {
+                background: #a5d6a7;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="lo.png" alt="">
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="empowerment.html">Empowerment</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="cart.html">Explore Products</a></li>
+                    <li><a href="farmcart.html">Sell Here </a></li>
+                </ul>
+            </nav>
+             <a href="login.html"><button class="demo-button">Login / Signup</button>  </a> 
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <h1>                                                                                        </h1><br><br><br>
+        <p>                                                                                                          </p>
+        <div class="cta-buttons">
+            <a href="farmersreg.html"><button>Join as a Producer</button></a>
+            <a href="consumer.html"><button>Join as a Consumer</button></a>
+        </div>
+    </section>
+
+    <!-- Kisaan Mitra Agri Ecosystem Stats -->
+    <div class="container">
+        <div class="title">Kisaan Mitra Agri Ecosystem at a Glance</div>
+        <div class="hex-grid">
+            <div class="hex">
+                <div class="hex-content">25+<span>Total digital communities</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">2M+<span>Leads generated</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">400+<span>Total crop varieties</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">300+<span>Total branding campaigns done</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">120+<span>Total crops</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">1M+<span>Total advisory given</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">12M+<span>Farmers Network</span></div>
+            </div>
+            <div class="hex">
+                <div class="hex-content">5k+<span>Smart farms</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="service">
+            <h2>Communities</h2>
+            <p>Crop and geography focused farmer communities</p>
+        </div>
+        <div class="service">
+            <h2>Advisory</h2>
+            <p>Personalised advisory and recommendations for crop protection</p>
+        </div>
+        <div class="service">
+            <h2>Leveraging Phygital</h2>
+            <p>Digital technology with physical touch</p>
+        </div>
+        <div class="service">
+            <h2>Remote Sensing</h2>
+            <p>Remote sensing for crop monitoring and personalised advisory</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">FAQs</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p>&copy; 2025 Kisaan Mitra | All rights reserved</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! We will get back to you shortly.');
+        });
+    </script>
+</body>
+</html>

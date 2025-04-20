@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisaan Mitra - Farmer Registration</title>
+    <style>
+        /* Basic reset for padding and margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background settings */
+#farmersregis {
+    font-family: Arial, sans-serif;
+    background: #ece9e9;
+    color: #56d31c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    animation: fadeIn 2s ease-in;
+}
+
+header h1 {
+    margin-bottom: 0px;
+}
+
+/* Registration Form Styles */
+.registration-form {
+    background-color: rgba(255, 255, 255, 0.966);
+    margin: 30px auto;
+    padding: 20px;
+    width: 90%;
+    
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(142, 207, 105, 0.1);
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.registration-form h2, .registration-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.registration-form input, 
+.registration-form select, 
+.registration-form textarea,
+.registration-form button {
+    width: 100%;
+    padding: 10px;
+    
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styles */
+.registration-form button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Hidden Sections (for unique farming and special tech) */
+.hidden-section {
+    display: none;
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body id="farmersregis">
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Farmer Registration - Kisaan Mitra</h1>
+            <p>Register to connect directly with buyers</p>
+        </div>
+    </header>
+
+    <!-- Farmer Registration Form -->
+    <section class="registration-form">
+        <form id="farmerForm">
+            <h2>Register Here!</h2>
+
+            <label for="name">Full Name*</label>
+            <input type="text" id="name" name="name" required placeholder="name  /  नाम
+            ">
+
+            <label for="village">Village:</label>
+            <input type="text" id="village" name="village" required placeholder="village /  गाँव">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male / पुरुष</option>
+                <option value="female">Female / 
+                    महिला  </option>
+                <option value="other">Other / अन्य</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" required placeholder="age / आयु">
+
+            <label for="kisanCard">Kisan Krishi Card Number:</label>
+            <input type="text" id="kisanCard" name="kisanCard" required placeholder="krisi card number / किसान क्रेडिट कार्ड (केसीसी)">
+
+            <label for="poPs">Post Office/Police Station:</label>
+            <input type="text" id="poPs" name="poPs" required placeholder="po/ps    पी.ओ. / पी.एस.">
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required placeholder=" district / ज़िला">
+
+            <label for="state">State:</label>
+            <select id="state" name="state" required aria-placeholder=" state / 
+            राज्य">
+                <option value="">Select State</option>
+                <option value="andhra_pradesh">Andhra Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="kerala">Kerala</option>
+                <option value="delhi">Delhi</option>
+                <option value="up">Uttar Pradesh</option>
+                <!-- Add more states as required -->
+            </select>
+
+            <label for="landOwned">Land Owned (in acres):</label>
+            <input type="number" id="landOwned" name="landOwned" >
+
+            <h3>other then crop cultivation</h3>
+            <label for="farmingType">Type of Farming*:</label>
+            <select id="farmingType" name="farmingType" required>
+                <option value="">Select Farming Type</option>
+                <option value="fisiculture">Fisiculture</option>
+                <option value="poultry">Poultry</option>
+                <option value="dairy">Milk Dairy</option>
+                <option value="others">Other</option>
+                <option value="others">none</option>
+            </select>
+
+            <label for="amount">Amount (in Qntls, Liters, or Tons):</label>
+            <input type="text" id="amount" name="amount" >
+
+            <label for="farmingStyle">Farming Style:</label>
+            <select id="farmingStyle" name="farmingStyle" >
+                <option value="">Select Farming Style</option>
+                <option value="intensive">Intensive</option>
+                <option value="commercial">Commercial</option>
+                <option value="commercial">sustainable</option>
+
+            </select>
+
+            <!-- Unique Farming Section -->
+            <section id="uniqueFarming" class="hidden-section">
+                <h3>Unique Farming Practices</h3>
+                <label for="uniqueFarming">Select Unique Farming Practice:</label>
+                <select id="uniqueFarming" name="uniqueFarming">
+                    <option value="">Select if applicable</option>
+                    <option value="tea">Tea</option>
+                    <option value="floriculture">Floriculture</option>
+                    <option value="saffron">Saffron</option>
+                    <option value="orchids">Orchids</option>
+                    <option value="coffee">Coffee</option>
+                    <input type="text" id="amount" name="amount"  placeholder="others / ">
+                    <!-- Add more unique farming options as required -->
+                </select>
+            </section>
+
+            <!-- Special Tech Section -->
+            <section id="specialTech" class="hidden-section">
+                <h3>Special Technologies Used</h3>
+                <label for="techUsed">Select Technology:</label>
+                <select id="techUsed" name="techUsed">
+                    <option value="">Select if applicable</option>
+                    <option value="hydroponics">Hydroponics</option>
+                    <option value="aquaponics">Aquaponics</option>
+                    <option value="tissueCulture">Tissue Culture</option>
+                </select>
+            </section>
+
+            <h3>Comments</h3>
+            <textarea id="comments" name="comments" placeholder="Enter any comments or additional information" rows="4"></textarea>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Kisaan Mitra | All Rights Reserved</p>
+    </footer>
+
+    <script> // JavaScript to handle form logic, including showing unique farming and special tech sections
+        document.getElementById('farmerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Fetch form values
+            const name = document.getElementById('name').value;
+            const village = document.getElementById('village').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const kisanCard = document.getElementById('kisanCard').value;
+            const poPs = document.getElementById('poPs').value;
+            const district = document.getElementById('district').value;
+            const state = document.getElementById('state').value;
+            const landOwned = document.getElementById('landOwned').value;
+            const farmingType = document.getElementById('farmingType').value;
+            const amount = document.getElementById('amount').value;
+            const farmingStyle = document.getElementById('farmingStyle').value;
+            const uniqueFarming = document.getElementById('uniqueFarming').value;
+            const techUsed = document.getElementById('techUsed').value;
+            const comments = document.getElementById('comments').value;
+        
+            // Simple validation
+            if (name && village && age && kisanCard && poPs && district && state && farmingType && amount) {
+                alert(`Registration successful! Farmer: ${name}, Village: ${village}. Farming Type: ${farmingType}.`);
+        
+                // Reset form
+                document.getElementById('farmerForm').reset();
+            } else {
+                alert("Please fill all required fields.");
+            }
+        });
+        
+        // Show or hide sections based on user selection
+        document.getElementById('farmingType').addEventListener('change', function() {
+            const uniqueFarmingSection = document.getElementById('uniqueFarming');
+            const techSection = document.getElementById('specialTech');
+            
+            if (this.value === 'others') {
+                uniqueFarmingSection.style.display = 'block';
+            } else {
+                uniqueFarmingSection.style.display = 'none';
+            }
+        
+            if (this.value === 'fisiculture' || this.value === 'poultry' || this.value === 'dairy') {
+                techSection.style.display = 'block';
+            } else {
+                techSection.style.display = 'none';
+            }
+        });
+          </script>
+</body>
+</html>

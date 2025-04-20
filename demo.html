@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .navbar:hover {
+            background-color: #444;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar .request-demo {
+            background-color: green;
+            color: white;
+        }
+
+        /* Form Container Styles */
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 50%;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.618);
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: green;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="submit"] {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+        .recaptcha {
+            margin: 20px 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #444;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a class="request-demo" href="#demo">Request Demo</a>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <h2>Request a demo</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone number *</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" name="company-name">
+            </div>
+            <div class="form-group">
+                <label for="company-website">Company Website</label>
+                <input type="url" id="company-website" name="company-website">
+            </div>
+            <div class="form-group">
+                <label for="message">Write a message or query</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <div class="recaptcha">
+                <input type="checkbox" id="recaptcha" name="recaptcha">
+                <label for="recaptcha">I'm not a robot</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kishaan Mitra | All rights reserved.</p>
+    </footer>
+</body>
+</html>

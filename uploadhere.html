@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisaan Mitra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #e3ffdc;
+            padding: 20px;
+            color: #4ea553;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .product-list {
+            margin-top: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .product-item h3 {
+            margin: 0;
+        }
+
+        .alert {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+            animation: showAlert 1s ease-out;
+        }
+
+        .footer {
+            background-color: #4e554f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: static;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Animation for fading in product list */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for alert message */
+        @keyframes showAlert {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Kisaan Mitra</h1>
+        <p>Empowering Farmers, Connecting Directly with Consumers</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Alert for product addition -->
+        <div class="alert" id="product-alert">Product Added Successfully!</div>
+
+        <!-- Product Upload Form -->
+        <div class="form-container">
+            <h2>Upload Your Product</h2>
+            <form id="product-form">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" name="product-name" required>
+
+                <label for="product-description">Product Description</label>
+                <textarea id="product-description" name="product-description" rows="4" required></textarea>
+
+                <label for="product-rate">Price per kg/liter</label>
+                <input type="number" id="product-rate" name="product-rate" required>
+
+                <label for="product-category">Category</label>
+                <select id="product-category" name="product-category" required>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="grains">Grains</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <!-- Displaying Uploaded Products -->
+        <div class="product-list" id="product-list">
+            <h2>Available Products</h2>
+            <!-- Products will appear here after being added -->
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Kisaan Mitra | All Rights Reserved</p>
+    </div>
+
+    <script>
+        // JavaScript to handle the product form and display
+        const productForm = document.getElementById('product-form');
+        const productList = document.getElementById('product-list');
+        const alertBox = document.getElementById('product-alert');
+
+        productForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get values from the form
+            const productName = document.getElementById('product-name').value;
+            const productDescription = document.getElementById('product-description').value;
+            const productRate = document.getElementById('product-rate').value;
+            const productCategory = document.getElementById('product-category').value;
+
+            // Create a new product item
+            const productItem = document.createElement('div');
+            productItem.classList.add('product-item');
+
+            productItem.innerHTML = `
+                <h3>${productName} (${productCategory})</h3>
+                <p><strong>Description:</strong> ${productDescription}</p>
+                <p><strong>Price:</strong> ₹${productRate} per ${productCategory === 'dairy' ? 'liter' : 'kg'}</p>
+            `;
+
+            // Add the product item to the list
+            productList.appendChild(productItem);
+
+            // Show success alert
+            alertBox.style.display = 'block';
+            setTimeout(function () {
+                alertBox.style.display = 'none';
+            }, 3000);
+
+            // Reset the form
+            productForm.reset();
+        });
+    </script>
+
+</body>
+
+</html>

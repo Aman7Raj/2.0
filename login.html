@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisaan Mitra Portal - Login / Signup</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            color: #45a049;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            padding: 10px;
+        }
+
+        .form-wrapper {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Limit max width of the form */
+            box-sizing: border-box; /* Prevent padding from affecting the width */
+            transition: transform 0.3s ease;
+        }
+
+        h2 {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .user-selection {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .user-btn {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border: none;
+            cursor: pointer;
+            background-color: #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .user-btn.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        button {
+            padding: 0.8rem;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .response-message {
+            margin-top: 1rem;
+            font-size: 1rem;
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .response-message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .response-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>Sign Up / Log In</h2>
+
+            <div class="user-selection">
+                <button id="farmerBtn" class="user-btn active" onclick="switchUserType('farmer')">Farmer</button>
+                <button id="consumerBtn" class="user-btn" onclick="switchUserType('consumer')">Consumer</button>
+            </div>
+
+            <form id="signUpForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="tel" id="mobileNumber" placeholder="Mobile Number" required>
+
+                <div id="farmerFields" class="additional-fields">
+                    <input type="text" id="krisiCardNumber" placeholder="Krishi Card Number" required>
+                </div>
+
+                <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+            </form>
+
+            <div id="responseMessage" class="response-message"></div>
+        </div>
+    </div>
+
+    <script>
+        function switchUserType(userType) {
+            const farmerFields = document.getElementById("farmerFields");
+            const userButtons = document.querySelectorAll('.user-btn');
+            userButtons.forEach(btn => btn.classList.remove("active"));
+
+            if (userType === 'farmer') {
+                farmerFields.style.display = "block";
+                document.getElementById("farmerBtn").classList.add("active");
+            } else {
+                farmerFields.style.display = "none";
+                document.getElementById("consumerBtn").classList.add("active");
+            }
+        }
+
+        document.getElementById("signUpForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const mobileNumber = document.getElementById("mobileNumber").value;
+            const userType = document.querySelector(".user-btn.active").textContent.toLowerCase();
+            const responseMessage = document.getElementById("responseMessage");
+
+            if (!email.includes("@")) {
+                displayResponse("Invalid email address.", "error");
+                return;
+            }
+
+            if (password.length < 6) {
+                displayResponse("Password must be at least 6 characters long.", "error");
+                return;
+            }
+
+            if (!/^\d{10}$/.test(mobileNumber)) {
+                displayResponse("Mobile number must be 10 digits.", "error");
+                return;
+            }
+
+            if (userType === 'farmer') {
+                const krisiCardNumber = document.getElementById("krisiCardNumber").value;
+                if (!krisiCardNumber.trim()) {
+                    displayResponse("Krishi Card Number is required for farmers.", "error");
+                    return;
+                }
+            }
+
+            // Simulated backend response
+            const isSuccess = Math.random() > 0.2; // 80% chance of success
+            if (isSuccess) {
+                displayResponse(`${userType.charAt(0).toUpperCase() + userType.slice(1)} registration successful!`, "success");
+                document.getElementById("signUpForm").reset();
+            } else {
+                displayResponse("Something went wrong. Please try again.", "error");
+            }
+        });
+
+        function displayResponse(message, type) {
+            const responseMessage = document.getElementById("responseMessage");
+            responseMessage.textContent = message;
+            responseMessage.className = `response-message ${type}`;
+            responseMessage.style.display = "block";
+        }
+    </script>
+</body>
+</html>

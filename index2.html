@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketLinkPro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #e8f5e9; /* Light green background */
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        /* Green Color Palette */
+        :root {
+            --primary-green: #388e3c;
+            --secondary-green: #66bb6a;
+            --light-green: #a5d6a7;
+            --dark-green: #2c6e2f;
+            --footer-bg: #2b2b2b;
+        }
+
+        header {
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-green);
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-green);
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .cta-buttons button {
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--primary-green);
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-buttons button:hover {
+            transform: scale(1.1);
+            background: var(--secondary-green);
+        }
+
+        .features-section,
+        .about-section,
+        .benefits-section,
+        .faq-section,
+        .contact-section {
+            padding: 2rem;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .features-section ul,
+        .benefits-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features-section li,
+        .benefits-section li {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            margin: 0 0.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: #e8f5e9;
+            }
+            50% {
+                background: #c8e6c9;
+            }
+            100% {
+                background: #a5d6a7;
+            }
+        }
+
+        /* Input and form styling */
+        form input, form textarea {
+            width: 80%;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: 2px solid var(--secondary-green);
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.5rem 1.5rem;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: var(--secondary-green);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MarketLinkPro</div>
+        <p class="tagline">Empowering Producers, Connecting Markets</p>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <h1>Bridge the Gap Between Producers and Markets</h1>
+        <p>Connect directly with buyers, access real-time market data, and streamline your supply chain.</p>
+        <div class="cta-buttons">
+            <button>Join as a Producer</button>
+            <button>Join as a Buyer</button>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Direct Market Access</li>
+            <li>Real-Time Market Data</li>
+            <li>Logistics Support</li>
+            <li>Marketing Tools</li>
+        </ul>
+    </section>
+
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <p>"Hear from producers who transformed their business with MarketLinkPro."</p>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p><strong>Mission Statement:</strong> We aim to empower small-scale producers by connecting them directly with buyers and eliminating inefficiencies in the supply chain.</p>
+        <p><strong>Our Vision:</strong> To create a transparent, equitable marketplace for producers and buyers.</p>
+    </section>
+
+    <section id="benefits" class="benefits-section">
+        <h2>Benefits</h2>
+        <h3>For Producers:</h3>
+        <ul>
+            <li>Higher profit margins.</li>
+            <li>Access to broader markets.</li>
+            <li>Simplified logistics.</li>
+        </ul>
+        <h3>For Buyers:</h3>
+        <ul>
+            <li>Direct access to fresh, high-quality products.</li>
+            <li>Transparent pricing.</li>
+        </ul>
+    </section>
+
+    <section id="faqs" class="faq-section">
+        <h2>FAQs</h2>
+        <p><strong>Q:</strong> Who can use this platform? <br><strong>A:</strong> Small-scale producers and buyers seeking direct connections.</p>
+        <p><strong>Q:</strong> How do I sign up? <br><strong>A:</strong> Click on “Join as a Producer” or “Join as a Buyer” on the homepage.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p>Email: support@marketlinkpro.com</p>
+        <p>Phone: +1-800-MARKETPRO</p>
+    </section>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 MarketLinkPro</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! We will get back to you shortly.');
+        });
+    </script>
+</body>
+</html>

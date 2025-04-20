@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Verification - Kisaan Mitraa</title>
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #3e8e41;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+.verification-portal {
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.verification-portal h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 12px;
+    background-color: #3e8e41;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #2e6e2c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+#add-products-button{
+    background-color: #2e6e2c;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Kisaan Mitraa</div>
+        <nav>
+            <a href="kisan mitra.html">Home</a>
+            <a href="farmersreg.html">Farmer Portal</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Farmer Verification Form -->
+        <div class="verification-portal">
+            <h2>Farmer Verification Portal</h2>
+
+            <form id="farmer-verification-form">
+                <h3>Enter Your Details for Verification</h3>
+
+                <!-- Krishi Card Number -->
+                <label for="krishi-card-number">Krishi Card Number:</label>
+                <input type="text" id="krishi-card-number" required>
+
+                <!-- Aadhaar Number -->
+                <label for="aadhaar-number">Aadhaar Number:</label>
+                <input type="text" id="aadhaar-number" required>
+
+                <!-- Phone Number -->
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" required>
+
+                <!-- Kisaan Mitra Registration ID -->
+                <label for="reg-id">Kisaan Mitra Portal Registration ID:</label>
+                <input type="text" id="reg-id" required>
+
+                <button type="submit">Verify Details</button>
+            </form>
+
+            <div id="verification-message" style="display: none;">
+                <p>Your details have been successfully verified. You are now <strong>Verified</strong>.</p>
+               <a href="uploadhere.html"> <button id="add-products-button"  style="display: none;" >Add Your Products</button></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kisaan Mitraa - Direct Farm to Consumer</p>
+    </footer>
+
+    <script src="farmcart.js"></script>
+</body>
+</html>
+
+<script>
+    // Handle the form submission for verifying farmer details
+document.getElementById("farmer-verification-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Grab the input values
+    const krishiCardNumber = document.getElementById("krishi-card-number").value;
+    const aadhaarNumber = document.getElementById("aadhaar-number").value;
+    const phoneNumber = document.getElementById("phone-number").value;
+    const regId = document.getElementById("reg-id").value;
+
+    // Simulate verification (here we should ideally check with backend)
+    if (krishiCardNumber && aadhaarNumber && phoneNumber && regId) {
+        // Simulate a verification process (In real-world, verify with a backend API)
+        const isValid = verifyFarmerDetails(krishiCardNumber, aadhaarNumber, phoneNumber, regId);
+
+        if (isValid) {
+            // Show confirmation message and allow product addition
+            document.getElementById("verification-message").style.display = "block";
+            document.getElementById("add-products-button").style.display = "block";
+            document.getElementById("farmer-verification-form").style.display = "none";
+        } else {
+            alert("Verification failed! Please check your details.");
+        }
+    } else {
+        alert("Please fill in all the fields.");
+    }
+});
+
+// Function to simulate verification process
+function verifyFarmerDetails(krishiCard, aadhaar, phone, regId) {
+    // In a real-world scenario, you'd send a request to your backend API
+    // For now, simulate successful verification
+    // For example purposes, assume every entry is valid if they are non-empty.
+    return true;
+}
+
+// Handle product upload redirection
+document.getElementById("add-products-button").addEventListener("click", function() {
+    window.location.href = "add-product.html";  // Redirect to product upload page
+});
+
+</script>
+
+
+
+
+
